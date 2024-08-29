@@ -1,8 +1,8 @@
 services:
   backend:
     build: 
-      context: .
-      dockerfile: task4/back-end/Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
     image: softy-pinto-back-end:task4
     ports:
       - "5252:5252"
@@ -10,8 +10,8 @@ services:
 
   frontend:
     build:
-      context: .
-      dockerfile: task4/front-end/Dockerfile
+      context: ./frontend
+      dockerfile: Dockerfile
     image: softy-pinto-front-end:task4
     ports:
       - "9000:9000"
