@@ -13,6 +13,6 @@ services:
       dockerfile: Dockerfile
     image: softy-pinto-front-end:task4
     ports:
-      - "9000:9000"
+      - "5252:5252"
     depends_on:
       - back-end
