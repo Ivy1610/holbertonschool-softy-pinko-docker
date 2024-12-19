@@ -11,6 +11,6 @@ WORKDIR /app
 
 COPY ./api.py /app/api.py
 
-EXPOSE 5252
+EXPOSE 5253
 
 CMD ["python3", "api.py"]
