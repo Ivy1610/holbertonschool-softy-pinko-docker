@@ -1,0 +1,40 @@
+services:
+  back-end:
+    build: 
+      context: ./back-end
+      dockerfile: Dockerfile
+    image: softy-pinto-back-end:task6
+    expose:
+      - "5252"
+    container_name: task6-back-end
+
+  back-end-2:
+    build: 
+      context: ./back-end
+      dockerfile: Dockerfile
+    image: softy-pinto-back-end:task6
+    expose:
+      - "5254"
+    container_name: task6-back-end-2
+
+  front-end:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    image: softy-pinto-front-end:task6
+    expose:
+      - "9000"
+    container_name: task6-front-end
+
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    image: softy-pinko-proxy:task6
+    ports:
+      - "80:80"
+    container_name: task6-proxy
+    depends_on:
+      - front-end
+      - back-end
+      - back-end-2
